@@ -1,0 +1,594 @@
+<!-- meta tags and other links -->
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TideBill</title>
+  <link rel="icon" type="image/png" href="assets/images/favicon.png" sizes="16x16">
+  <!-- remix icon font css  -->
+  <link rel="stylesheet" href="assets/css/remixicon.css">
+  <!-- BootStrap css -->
+  <link rel="stylesheet" href="assets/css/lib/bootstrap.min.css">
+  <!-- Apex Chart css -->
+  <link rel="stylesheet" href="assets/css/lib/apexcharts.css">
+  <!-- Data Table css -->
+  <link rel="stylesheet" href="assets/css/lib/dataTables.min.css">
+  <!-- Text Editor css -->
+  <link rel="stylesheet" href="assets/css/lib/editor-katex.min.css">
+  <link rel="stylesheet" href="assets/css/lib/editor.atom-one-dark.min.css">
+  <link rel="stylesheet" href="assets/css/lib/editor.quill.snow.css">
+  <!-- Date picker css -->
+  <link rel="stylesheet" href="assets/css/lib/flatpickr.min.css">
+  <!-- Calendar css -->
+  <link rel="stylesheet" href="assets/css/lib/full-calendar.css">
+  <!-- Vector Map css -->
+  <link rel="stylesheet" href="assets/css/lib/jquery-jvectormap-2.0.5.css">
+  <!-- Popup css -->
+  <link rel="stylesheet" href="assets/css/lib/magnific-popup.css">
+  <!-- Slick Slider css -->
+  <link rel="stylesheet" href="assets/css/lib/slick.css">
+  <!-- prism css -->
+  <link rel="stylesheet" href="assets/css/lib/prism.css">
+  <!-- file upload css -->
+  <link rel="stylesheet" href="assets/css/lib/file-upload.css">
+  
+  <link rel="stylesheet" href="assets/css/lib/audioplayer.css">
+  <!-- main css -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+  <body>
+    <aside class="sidebar">
+      <button type="button" class="sidebar-close-btn">
+        <iconify-icon icon="radix-icons:cross-2"></iconify-icon>
+      </button>
+      <div>
+        <a href="index.html" class="sidebar-logo">
+          <img src="assets/images/logo.png" alt="site logo" class="light-logo">
+          <img src="assets/images/logo-light.png" alt="site logo" class="dark-logo">
+          <img src="assets/images/favicon.png" alt="site logo" class="logo-icon">
+        </a>
+      </div>
+      <div class="sidebar-menu-area">
+        <ul class="sidebar-menu" id="sidebar-menu">
+          <li>
+            <a href="index.html">
+              <iconify-icon icon="solar:home-smile-angle-outline" class="menu-icon"></iconify-icon>
+              <span>Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a href="create-invoice.html">
+              <iconify-icon icon="hugeicons:invoice-03" class="menu-icon"></iconify-icon>
+              <span>Create Invoice</span>
+            </a>
+          </li>
+          <li>
+            <a href="manage-invoice.html">
+              <iconify-icon icon="solar:document-text-outline" class="menu-icon"></iconify-icon>
+              <span>Manage Invoice</span>
+            </a>
+          </li>
+          <li>
+            <a href="customers.html">
+              <iconify-icon icon="flowbite:users-group-outline" class="menu-icon"></iconify-icon>
+              <span>Customers</span>
+            </a>
+          </li>
+          <li>
+            <a href="products.html">
+              <iconify-icon icon="mingcute:storage-line" class="menu-icon"></iconify-icon>
+              <span>Product & Services</span>
+            </a>
+          </li>
+          <li>
+            <a href="expenses.html">
+              <iconify-icon icon="hugeicons:money-send-square" class="menu-icon"></iconify-icon>
+              <span>Expenses</span>
+            </a>
+          </li>
+          <li>
+            <a href="reports.html">
+              <iconify-icon icon="solar:pie-chart-outline" class="menu-icon"></iconify-icon>
+              <span>Reports</span>
+            </a>
+          </li>
+          <li>
+            <a href="users.html">
+              <i class="ri-user-settings-line text-xl me-14 d-flex w-auto"></i>
+              <span>Users & Roles</span>
+            </a>
+          </li>
+          <li>
+        </ul>
+      </div>
+     
+    </aside>
+
+<main class="dashboard-main">
+  <div class="navbar-header">
+  <div class="row align-items-center justify-content-between">
+    <div class="col-auto">
+      <div class="d-flex flex-wrap align-items-center gap-4">
+        <button type="button" class="sidebar-toggle">
+          <iconify-icon icon="heroicons:bars-3-solid" class="icon text-2xl non-active"></iconify-icon>
+          <iconify-icon icon="iconoir:arrow-right" class="icon text-2xl active"></iconify-icon>
+        </button>
+        <button type="button" class="sidebar-mobile-toggle">
+          <iconify-icon icon="heroicons:bars-3-solid" class="icon"></iconify-icon>
+        </button>
+        <form class="navbar-search">
+          <input type="text" name="search" placeholder="Search">
+          <iconify-icon icon="ion:search-outline" class="icon"></iconify-icon>
+        </form>
+      </div>
+    </div>
+    <div class="col-auto">
+      <div class="d-flex flex-wrap align-items-center gap-3">
+        <button type="button" data-theme-toggle class="w-40-px h-40-px bg-neutral-200 rounded-circle d-flex justify-content-center align-items-center"></button>
+
+        <div class="dropdown">
+          <button class="has-indicator w-40-px h-40-px bg-neutral-200 rounded-circle d-flex justify-content-center align-items-center" type="button" data-bs-toggle="dropdown">
+            <iconify-icon icon="iconoir:bell" class="text-primary-light text-xl"></iconify-icon>
+          </button>
+          <div class="dropdown-menu to-top dropdown-menu-lg p-0">
+            <div class="m-16 py-12 px-16 radius-8 bg-primary-50 mb-16 d-flex align-items-center justify-content-between gap-2">
+              <div>
+                <h6 class="text-lg text-primary-light fw-semibold mb-0">Notifications</h6>
+              </div>
+              <span class="text-primary-600 fw-semibold text-lg w-40-px h-40-px rounded-circle bg-base d-flex justify-content-center align-items-center">05</span>
+            </div>
+             
+           <div class="max-h-400-px overflow-y-auto scroll-sm pe-4">
+            <a href="javascript:void(0)" class="px-24 py-12 d-flex align-items-start gap-3 mb-2 justify-content-between">
+              <div class="text-black hover-bg-transparent hover-text-primary d-flex align-items-center gap-3"> 
+                <span class="w-44-px h-44-px bg-success-subtle text-success-main rounded-circle d-flex justify-content-center align-items-center flex-shrink-0">
+                  <iconify-icon icon="bitcoin-icons:verify-outline" class="icon text-xxl"></iconify-icon>
+                </span> 
+                <div>
+                  <h6 class="text-md fw-semibold mb-4">Congratulations</h6>
+                  <p class="mb-0 text-sm text-secondary-light text-w-200-px">Your profile has been Verified. Your profile has been Verified</p>
+                </div>
+              </div>
+              <span class="text-sm text-secondary-light flex-shrink-0">23 Mins ago</span>
+            </a>
+            
+            <a href="javascript:void(0)" class="px-24 py-12 d-flex align-items-start gap-3 mb-2 justify-content-between bg-neutral-50">
+              <div class="text-black hover-bg-transparent hover-text-primary d-flex align-items-center gap-3"> 
+                <span class="w-44-px h-44-px bg-success-subtle text-success-main rounded-circle d-flex justify-content-center align-items-center flex-shrink-0">
+                  <img src="assets/images/notification/profile-1.png" alt="">
+                </span> 
+                <div>
+                  <h6 class="text-md fw-semibold mb-4">Ronald Richards</h6>
+                  <p class="mb-0 text-sm text-secondary-light text-w-200-px">You can stitch between artboards</p>
+                </div>
+              </div>
+              <span class="text-sm text-secondary-light flex-shrink-0">23 Mins ago</span>
+            </a>
+            
+            
+           </div>
+
+            <div class="text-center py-12 px-16"> 
+                <a href="javascript:void(0)" class="text-primary-600 fw-semibold text-md">See All Notification</a>
+            </div>
+
+          </div>
+        </div><!-- Notification dropdown end -->
+
+        <div class="dropdown">
+          <button class="d-flex justify-content-center align-items-center rounded-circle" type="button" data-bs-toggle="dropdown">
+            <img src="assets/images/favicon.png" alt="image" class="w-40-px h-40-px object-fit-cover rounded-circle">
+          </button>
+          <div class="dropdown-menu to-top dropdown-menu-sm">
+            <div class="py-12 px-16 radius-8 bg-primary-50 mb-16 d-flex align-items-center justify-content-between gap-2">
+              <div>
+                <h6 class="text-lg text-primary-light fw-semibold mb-2">Akash</h6>
+                <span class="text-secondary-light fw-medium text-sm">Admin</span>
+              </div>
+              <button type="button" class="hover-text-danger">
+                <iconify-icon icon="radix-icons:cross-1" class="icon text-xl"></iconify-icon> 
+              </button>
+            </div>
+            <ul class="to-top-list">
+              <li>
+                <a class="dropdown-item text-black px-0 py-8 hover-bg-transparent hover-text-primary d-flex align-items-center gap-3" href="view-profile.html"> 
+                <iconify-icon icon="solar:user-linear" class="icon text-xl"></iconify-icon>  My Profile</a>
+              </li>
+              <li>
+                <a class="dropdown-item text-black px-0 py-8 hover-bg-transparent hover-text-primary d-flex align-items-center gap-3" href="settings.html"> 
+                <iconify-icon icon="icon-park-outline:setting-two" class="icon text-xl"></iconify-icon>  Setting</a>
+              </li>
+              <li>
+                <a class="dropdown-item text-black px-0 py-8 hover-bg-transparent hover-text-danger d-flex align-items-center gap-3" href="javascript:void(0)"> 
+                <iconify-icon icon="lucide:power" class="icon text-xl"></iconify-icon>  Log Out</a>
+              </li>
+            </ul>
+          </div>
+        </div><!-- Profile dropdown end -->
+      </div>
+    </div>
+  </div>
+</div> 
+    
+    <div class="dashboard-main-body">
+        <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mb-24">
+  <h6 class="fw-semibold mb-0">Settings</h6>
+  <ul class="d-flex align-items-center gap-2">
+    <li class="fw-medium">
+      <a href="index.html" class="d-flex align-items-center gap-1 hover-text-primary">
+        <iconify-icon icon="solar:home-smile-angle-outline" class="icon text-lg"></iconify-icon>
+        Dashboard
+      </a>
+    </li>
+    <li>-</li>
+    <li class="fw-medium">Settings</li>
+  </ul>
+</div>
+
+        <div class="row gy-4">
+            
+            <div class="col-12">
+                <div class="card h-100">
+                    <div class="card-body p-24">
+                        <ul class="nav border-gradient-tab nav-pills mb-20 d-inline-flex" id="pills-tab" role="tablist">
+                          <li class="nav-item" role="presentation">
+                            <button class="nav-link d-flex align-items-center px-24 active" id="pills-notification-tab" data-bs-toggle="pill" data-bs-target="#pills-notification" type="button" role="tab" aria-controls="pills-notification" aria-selected="false" tabindex="-1">
+                              Business Settings
+                            </button>
+                          </li>
+                            <li class="nav-item" role="presentation">
+                              <button class="nav-link d-flex align-items-center px-24 " id="pills-edit-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-edit-profile" type="button" role="tab" aria-controls="pills-edit-profile" aria-selected="true">
+                                Invoice Settings 
+                              </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                              <button class="nav-link d-flex align-items-center px-24" id="pills-change-passwork-tab" data-bs-toggle="pill" data-bs-target="#pills-change-passwork" type="button" role="tab" aria-controls="pills-change-passwork" aria-selected="false" tabindex="-1">
+                                Subscription Management 
+                              </button>
+                            </li>
+                            
+                        </ul>
+
+                        <div class="tab-content" id="pills-tabContent">   
+                            <div class="tab-pane fade show active" id="pills-notification" role="tabpanel" aria-labelledby="pills-notification-tab" tabindex="0">
+
+                              <div class="row">
+                                <div class="col-md-6">
+                                  <h6 class="text-md text-primary-light mb-16">Business Logo</h6>
+                                  <!-- Upload Image Start -->
+                                  <div class="mb-24 mt-16">
+                                      <div class="avatar-upload">
+                                        <div>
+                                          <img src="assets/images/logo.png" alt="" style="width: 60%;">
+                                          <div class="card-body p-24">
+                                            <label for="file-upload-name" class="mb-16 border border-neutral-600 fw-medium text-secondary-light px-16 py-12 radius-12 d-inline-flex align-items-center gap-2 bg-hover-neutral-200">
+                                              <iconify-icon icon="solar:upload-linear" class="text-xl"></iconify-icon>
+                                              Click to upload
+                                              <input type="file" class="form-control w-auto mt-24 form-control-lg" id="file-upload-name" multiple hidden>
+                                          </label>
+                                          <ul id="uploaded-img-names" class=""></ul>
+                                        </div>
+                                        </div>
+                                      </div>
+                                  </div>
+                                </div>
+                                <div class="col-md-6">
+                                  <div class="mb-20">
+                                    <label for="name" class="form-label fw-semibold text-primary-light text-sm mb-8">Business Name</label>
+                                    <input type="text" class="form-control radius-8" id="name" placeholder="Enter Business Name">
+                                  </div>
+                                  <div class="mb-20">
+                                    <label for="name" class="form-label fw-semibold text-primary-light text-sm mb-8">Contact Number</label>
+                                    <input type="text" class="form-control radius-8" id="name" placeholder="Enter Contact Number">
+                                  </div>
+                                  <div class="mb-20">
+                                    <label for="name" class="form-label fw-semibold text-primary-light text-sm mb-8">Business Email</label>
+                                    <input type="text" class="form-control radius-8" id="name" placeholder="Enter Business Email">
+                                  </div>
+                                </div>
+                                <div class="col-md-6">
+                                  <div class="mb-20">
+                                    <label for="name" class="form-label fw-semibold text-primary-light text-sm mb-8">Address</label>
+                                    <input type="text" class="form-control radius-8" id="name" placeholder="Enter Address">
+                                  </div>
+                                  <div class="mb-20">
+                                    <label for="name" class="form-label fw-semibold text-primary-light text-sm mb-8">Website</label>
+                                    <input type="text" class="form-control radius-8" id="name" placeholder="Enter Website">
+                                  </div>
+                                </div>
+                                <div class="col-md-6">
+                                  <div class="mb-20">
+                                    <label for="name" class="form-label fw-semibold text-primary-light text-sm mb-8">GST/VAT Number</label>
+                                    <input type="text" class="form-control radius-8" id="name" placeholder="Enter GST/VAT Number">
+                                  </div>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-center gap-3">
+                                  <button type="button" class="border border-danger-600 bg-hover-danger-200 text-danger-600 text-md px-56 py-11 radius-8"> 
+                                      Cancel
+                                  </button>
+                                  <button type="button" class="btn btn-primary border border-primary-600 text-md px-56 py-12 radius-8"> 
+                                      Save
+                                  </button>
+                                </div>
+                              </div>
+                              
+                              
+                            </div>
+
+                            <div class="tab-pane fade" id="pills-edit-profile" role="tabpanel" aria-labelledby="pills-edit-profile-tab" tabindex="0">
+
+                                <form action="#">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="mb-20">
+                                                <label for="name" class="form-label fw-semibold text-primary-light text-sm mb-8">Invoice Prefix Code</label>
+                                                <input type="text" class="form-control radius-8" id="name" placeholder="eg: TB">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                          <div class="mb-20">
+                                              <label for="notes" class="form-label fw-semibold text-primary-light text-sm mb-8">Default Notes & Terms</label>
+                                              <textarea class="form-control radius-8" id="notes" placeholder="Enter notes & terms" rows="6"></textarea>
+                                          </div>
+                                        </div>
+                                     </div>
+                                    <div class="d-flex align-items-center justify-content-center gap-3">
+                                        <button type="button" class="border border-danger-600 bg-hover-danger-200 text-danger-600 text-md px-56 py-11 radius-8"> 
+                                            Cancel
+                                        </button>
+                                        <button type="button" class="btn btn-primary border border-primary-600 text-md px-56 py-12 radius-8"> 
+                                            Save
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+
+                            <div class="tab-pane fade" id="pills-change-passwork" role="tabpanel" aria-labelledby="pills-change-passwork-tab" tabindex="0">
+                                <div class="row border-bottom pb-3">
+                                  <div class="col-md-8">
+                                    <div class="card p-3 shadow-none radius-8 border h-100 bg-gradient-start-2">
+                                        <div class="card-body p-0">
+                                        <div class="d-flex flex-wrap align-items-center justify-content-between gap-1 mb-8">
+                                            
+                                            <div class="d-flex align-items-center gap-2">
+                                                <span class="mb-0 w-48-px h-48-px bg-purple flex-shrink-0 text-white d-flex justify-content-center align-items-center rounded-circle h6" style="border-radius: 5px !important;">
+                                                  <i class="ri-vip-diamond-line"></i>
+                                                </span>
+                                                <div>
+                                                  <span class="bg-success-focus px-1 rounded-2 fw-medium text-success-main text-sm">Active</span>
+                                                <h6 class="fw-semibold text-purple">TideBill Business Pro</h6>
+                                                </div>
+                                            </div>
+                                            
+                                            <div id="active-user-chart" class="remove-tooltip-title rounded-tooltip-value">
+                                              <p class="text-sm mb-0">1 year package</p>
+                                              <h6 class="text-secondary-light">₹1999</h6>
+                                            </div>
+                                        </div>
+
+                                        <div class="d-flex justify-content-between align-items-center">
+                                          <div>
+                                            <p class="text-sm mb-0">Plan starts on : <b>10-10-2025</b></p>
+                                            <p class="text-sm mb-0">Plan Expires on : <b>10-10-2026</b></p>
+                                          </div>
+                                            <h6 class="text-purple text-md border p-3 bg-gradient-start-2">365 days left</h6>
+                                        </div>
+                                        
+                                        </div>
+                                    </div>
+                                  </div>
+
+                                  <div class="col-md-4 justify-content-center d-flex align-items-center">
+                                    <button type="button" class="btn rounded-pill btn-lilac-100 text-lilac-600 radius-8 px-20 py-11">Upgrade Plan +</button>
+                                  </div>
+                                </div>
+
+                                <div class="row mt-3">
+
+                                  <div class="col-md-6">
+                                    <div class="col-12">
+                                      <div class="card p-3 shadow-none radius-8 border h-100 bg-gradient-start-9">
+                                          <div class="card-body p-0">
+                                          <div class="d-flex flex-wrap align-items-center justify-content-between gap-1 mb-8">
+                                              
+                                              <div class="d-flex align-items-center gap-2">
+                                                  <span class="mb-0 w-48-px h-48-px bg-secondary flex-shrink-0 text-white d-flex justify-content-center align-items-center rounded-circle h6" style="border-radius: 5px !important;">
+                                                    <i class="ri-vip-diamond-line"></i>
+                                                  </span>
+                                                  <div>
+                                                    <span class="bg-secondary-focus px-1 rounded-2 fw-medium text-secondary text-sm">Expired</span>
+                                                  <h6 class="fw-semibold text-secondary">TideBill Business Pro</h6>
+                                                  </div>
+                                              </div>
+                                              
+                                              <div id="active-user-chart" class="remove-tooltip-title rounded-tooltip-value">
+                                                <p class="text-sm mb-0 text-secondary">1 year package</p>
+                                                <h6 class="text-secondary">₹1999</h6>
+                                              </div>
+                                          </div>
+  
+                                          <div class="d-flex justify-content-between align-items-center">
+                                            <div>
+                                              <p class="text-sm mb-0 text-secondary">Plan starts on : <b>10-10-2024</b></p>
+                                              <p class="text-sm mb-0 text-secondary">Plan Expired on : <b>10-10-2025</b></p>
+                                            </div>
+                                              <h6 class="text-secondary text-md border p-3 bg-gradient-start-9">Expired</h6>
+                                          </div>
+                                          
+                                          </div>
+                                      </div>
+                                    </div>
+                                  </div>
+
+                                  <div class="col-md-6">
+                                    <div class="col-12">
+                                      <div class="card p-3 shadow-none radius-8 border h-100 bg-gradient-start-9">
+                                          <div class="card-body p-0">
+                                          <div class="d-flex flex-wrap align-items-center justify-content-between gap-1 mb-8">
+                                              
+                                              <div class="d-flex align-items-center gap-2">
+                                                  <span class="mb-0 w-48-px h-48-px bg-secondary flex-shrink-0 text-white d-flex justify-content-center align-items-center rounded-circle h6" style="border-radius: 5px !important;">
+                                                    <i class="ri-vip-diamond-line"></i>
+                                                  </span>
+                                                  <div>
+                                                    <span class="bg-secondary-focus px-1 rounded-2 fw-medium text-secondary text-sm">Expired</span>
+                                                  <h6 class="fw-semibold text-secondary">TideBill Business Pro</h6>
+                                                  </div>
+                                              </div>
+                                              
+                                              <div id="active-user-chart" class="remove-tooltip-title rounded-tooltip-value">
+                                                <p class="text-sm mb-0 text-secondary">1 year package</p>
+                                                <h6 class="text-secondary">₹1999</h6>
+                                              </div>
+                                          </div>
+  
+                                          <div class="d-flex justify-content-between align-items-center">
+                                            <div>
+                                              <p class="text-sm mb-0 text-secondary">Plan starts on : <b>10-10-2024</b></p>
+                                              <p class="text-sm mb-0 text-secondary">Plan Expired on : <b>10-10-2025</b></p>
+                                            </div>
+                                              <h6 class="text-secondary text-md border p-3 bg-gradient-start-9">Expired</h6>
+                                          </div>
+                                          
+                                          </div>
+                                      </div>
+                                    </div>
+                                  </div>
+
+
+                                </div>
+                            </div>
+
+                            
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+      <footer class="d-footer">
+  <div class="row align-items-center justify-content-between">
+    <div class="col-12 text-center">
+      <p class="mb-0">© 2025 TideBill. All Rights Reserved.</p>
+    </div>
+  </div>
+</footer>
+  </main>
+  
+  <!-- jQuery library js -->
+  <script src="assets/js/lib/jquery-3.7.1.min.js"></script>
+  <!-- Bootstrap js -->
+  <script src="assets/js/lib/bootstrap.bundle.min.js"></script>
+  <!-- Apex Chart js -->
+  <script src="assets/js/lib/apexcharts.min.js"></script>
+  <!-- Data Table js -->
+  <script src="assets/js/lib/dataTables.min.js"></script>
+  <!-- Iconify Font js -->
+  <script src="assets/js/lib/iconify-icon.min.js"></script>
+  <!-- jQuery UI js -->
+  <script src="assets/js/lib/jquery-ui.min.js"></script>
+  <!-- Vector Map js -->
+  <script src="assets/js/lib/jquery-jvectormap-2.0.5.min.js"></script>
+  <script src="assets/js/lib/jquery-jvectormap-world-mill-en.js"></script>
+  <!-- Popup js -->
+  <script src="assets/js/lib/magnifc-popup.min.js"></script>
+  <!-- Slick Slider js -->
+  <script src="assets/js/lib/slick.min.js"></script>
+  <!-- prism js -->
+  <script src="assets/js/lib/prism.js"></script>
+  <!-- file upload js -->
+  <script src="assets/js/lib/file-upload.js"></script>
+  <!-- audioplayer -->
+  <script src="assets/js/lib/audioplayer.js"></script>
+  
+  <!-- main js -->
+  <script src="assets/js/app.js"></script>
+
+<script>
+    // ======================== Upload Image Start =====================
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                $('#imagePreview').css('background-image', 'url('+e.target.result +')');
+                $('#imagePreview').hide();
+                $('#imagePreview').fadeIn(650);
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+    $("#imageUpload").change(function() {
+        readURL(this);
+    });
+    // ======================== Upload Image End =====================
+
+    // ================== Password Show Hide Js Start ==========
+    function initializePasswordToggle(toggleSelector) {
+        $(toggleSelector).on('click', function() {
+            $(this).toggleClass("ri-eye-off-line");
+            var input = $($(this).attr("data-toggle"));
+            if (input.attr("type") === "password") {
+                input.attr("type", "text");
+            } else {
+                input.attr("type", "password");
+            }
+        });
+    }
+    // Call the function
+    initializePasswordToggle('.toggle-password');
+  // ========================= Password Show Hide Js End ===========================
+</script>
+
+
+<script>
+  // ================================================ Upload image & show it's name js start  ================================================
+  document.getElementById('file-upload-name').addEventListener('change', function(event) {
+    var fileInput = event.target;
+    var fileList = fileInput.files;
+    var ul = document.getElementById('uploaded-img-names');
+    
+    // Add show-uploaded-img-name class to the ul element if not already added
+    ul.classList.add('show-uploaded-img-name');
+
+    // Append each uploaded file name as a list item with Font Awesome and Iconify icons
+    for (var i = 0; i < fileList.length; i++) {
+        var li = document.createElement('li');
+        li.classList.add('uploaded-image-name-list', 'text-primary-600', 'fw-semibold', 'd-flex', 'align-items-center', 'gap-2');
+        
+        // Create the Link Iconify icon element
+        var iconifyIcon = document.createElement('iconify-icon');
+        iconifyIcon.setAttribute('icon', 'ph:link-break-light'); 
+        iconifyIcon.classList.add('text-xl', 'text-secondary-light');
+        
+        // Create the Cross Iconify icon element
+        var crossIconifyIcon = document.createElement('iconify-icon');
+        crossIconifyIcon.setAttribute('icon', 'radix-icons:cross-2');  
+        crossIconifyIcon.classList.add('remove-image','text-xl', 'text-secondary-light', 'text-hover-danger-600');
+
+        // Add event listener to remove the image on click
+        crossIconifyIcon.addEventListener('click', (function(liToRemove) {
+            return function() {
+                ul.removeChild(liToRemove); // Remove the corresponding list item
+            };
+        })(li)); // Pass the current list item as a parameter to the closure
+        
+        // Append both icons to the list item
+        li.appendChild(iconifyIcon);
+
+        // Append the file name text to the list item
+        li.appendChild(document.createTextNode(' ' + fileList[i].name));
+
+        li.appendChild(crossIconifyIcon);
+
+        // Append the list item to the unordered list
+        ul.appendChild(li);
+    }
+});
+  // ================================================ Upload image & show it's name js end ================================================
+</script>
+
+</body>
+</html>

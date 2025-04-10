@@ -1,0 +1,508 @@
+<!-- meta tags and other links -->
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TideBill</title>
+  <link rel="icon" type="image/png" href="assets/images/favicon.png" sizes="16x16">
+  <!-- remix icon font css  -->
+  <link rel="stylesheet" href="assets/css/remixicon.css">
+  <!-- BootStrap css -->
+  <link rel="stylesheet" href="assets/css/lib/bootstrap.min.css">
+  <!-- Apex Chart css -->
+  <link rel="stylesheet" href="assets/css/lib/apexcharts.css">
+  <!-- Data Table css -->
+  <link rel="stylesheet" href="assets/css/lib/dataTables.min.css">
+  <!-- Text Editor css -->
+  <link rel="stylesheet" href="assets/css/lib/editor-katex.min.css">
+  <link rel="stylesheet" href="assets/css/lib/editor.atom-one-dark.min.css">
+  <link rel="stylesheet" href="assets/css/lib/editor.quill.snow.css">
+  <!-- Date picker css -->
+  <link rel="stylesheet" href="assets/css/lib/flatpickr.min.css">
+  <!-- Calendar css -->
+  <link rel="stylesheet" href="assets/css/lib/full-calendar.css">
+  <!-- Vector Map css -->
+  <link rel="stylesheet" href="assets/css/lib/jquery-jvectormap-2.0.5.css">
+  <!-- Popup css -->
+  <link rel="stylesheet" href="assets/css/lib/magnific-popup.css">
+  <!-- Slick Slider css -->
+  <link rel="stylesheet" href="assets/css/lib/slick.css">
+  <!-- prism css -->
+  <link rel="stylesheet" href="assets/css/lib/prism.css">
+  <!-- file upload css -->
+  <link rel="stylesheet" href="assets/css/lib/file-upload.css">
+  
+  <link rel="stylesheet" href="assets/css/lib/audioplayer.css">
+  <!-- main css -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+  <body>
+    <aside class="sidebar">
+      <button type="button" class="sidebar-close-btn">
+        <iconify-icon icon="radix-icons:cross-2"></iconify-icon>
+      </button>
+      <div>
+        <a href="index.html" class="sidebar-logo">
+          <img src="assets/images/logo.png" alt="site logo" class="light-logo">
+          <img src="assets/images/logo-light.png" alt="site logo" class="dark-logo">
+          <img src="assets/images/favicon.png" alt="site logo" class="logo-icon">
+        </a>
+      </div>
+      <div class="sidebar-menu-area">
+        <ul class="sidebar-menu" id="sidebar-menu">
+          <li>
+            <a href="index.html">
+              <iconify-icon icon="solar:home-smile-angle-outline" class="menu-icon"></iconify-icon>
+              <span>Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a href="create-invoice.html">
+              <iconify-icon icon="hugeicons:invoice-03" class="menu-icon"></iconify-icon>
+              <span>Create Invoice</span>
+            </a>
+          </li>
+          <li>
+            <a href="manage-invoice.html">
+              <iconify-icon icon="solar:document-text-outline" class="menu-icon"></iconify-icon>
+              <span>Manage Invoice</span>
+            </a>
+          </li>
+          <li>
+            <a href="customers.html">
+              <iconify-icon icon="flowbite:users-group-outline" class="menu-icon"></iconify-icon>
+              <span>Customers</span>
+            </a>
+          </li>
+          <li>
+            <a href="products.html">
+              <iconify-icon icon="mingcute:storage-line" class="menu-icon"></iconify-icon>
+              <span>Product & Services</span>
+            </a>
+          </li>
+          <li>
+            <a href="expenses.html">
+              <iconify-icon icon="hugeicons:money-send-square" class="menu-icon"></iconify-icon>
+              <span>Expenses</span>
+            </a>
+          </li>
+          <li>
+            <a href="reports.html">
+              <iconify-icon icon="solar:pie-chart-outline" class="menu-icon"></iconify-icon>
+              <span>Reports</span>
+            </a>
+          </li>
+    
+          <li>
+            <a href="users.html">
+              <i class="ri-user-settings-line text-xl me-14 d-flex w-auto"></i>
+              <span>Users & Roles</span>
+            </a>
+          </li>
+          <li>
+          
+        </ul>
+    
+      </div>
+    
+     
+    </aside>
+
+<main class="dashboard-main">
+  <div class="navbar-header">
+    <div class="row align-items-center justify-content-between">
+      <div class="col-auto">
+        <div class="d-flex flex-wrap align-items-center gap-4">
+          <button type="button" class="sidebar-toggle">
+            <iconify-icon icon="heroicons:bars-3-solid" class="icon text-2xl non-active"></iconify-icon>
+            <iconify-icon icon="iconoir:arrow-right" class="icon text-2xl active"></iconify-icon>
+          </button>
+          <button type="button" class="sidebar-mobile-toggle">
+            <iconify-icon icon="heroicons:bars-3-solid" class="icon"></iconify-icon>
+          </button>
+          <form class="navbar-search">
+            <input type="text" name="search" placeholder="Search">
+            <iconify-icon icon="ion:search-outline" class="icon"></iconify-icon>
+          </form>
+        </div>
+      </div>
+      <div class="col-auto">
+        <div class="d-flex flex-wrap align-items-center gap-3">
+          <button type="button" data-theme-toggle class="w-40-px h-40-px bg-neutral-200 rounded-circle d-flex justify-content-center align-items-center"></button>
+          
+  
+          
+  
+          <div class="dropdown">
+            <button class="has-indicator w-40-px h-40-px bg-neutral-200 rounded-circle d-flex justify-content-center align-items-center" type="button" data-bs-toggle="dropdown">
+              <iconify-icon icon="iconoir:bell" class="text-primary-light text-xl"></iconify-icon>
+            </button>
+            <div class="dropdown-menu to-top dropdown-menu-lg p-0">
+              <div class="m-16 py-12 px-16 radius-8 bg-primary-50 mb-16 d-flex align-items-center justify-content-between gap-2">
+                <div>
+                  <h6 class="text-lg text-primary-light fw-semibold mb-0">Notifications</h6>
+                </div>
+                <span class="text-primary-600 fw-semibold text-lg w-40-px h-40-px rounded-circle bg-base d-flex justify-content-center align-items-center">05</span>
+              </div>
+              
+             <div class="max-h-400-px overflow-y-auto scroll-sm pe-4">
+              <a href="javascript:void(0)" class="px-24 py-12 d-flex align-items-start gap-3 mb-2 justify-content-between">
+                <div class="text-black hover-bg-transparent hover-text-primary d-flex align-items-center gap-3"> 
+                  <span class="w-44-px h-44-px bg-success-subtle text-success-main rounded-circle d-flex justify-content-center align-items-center flex-shrink-0">
+                    <iconify-icon icon="bitcoin-icons:verify-outline" class="icon text-xxl"></iconify-icon>
+                  </span> 
+                  <div>
+                    <h6 class="text-md fw-semibold mb-4">Congratulations</h6>
+                    <p class="mb-0 text-sm text-secondary-light text-w-200-px">Your profile has been Verified. Your profile has been Verified</p>
+                  </div>
+                </div>
+                <span class="text-sm text-secondary-light flex-shrink-0">23 Mins ago</span>
+              </a>
+              
+              <a href="javascript:void(0)" class="px-24 py-12 d-flex align-items-start gap-3 mb-2 justify-content-between bg-neutral-50">
+                <div class="text-black hover-bg-transparent hover-text-primary d-flex align-items-center gap-3"> 
+                  <span class="w-44-px h-44-px bg-success-subtle text-success-main rounded-circle d-flex justify-content-center align-items-center flex-shrink-0">
+                    <img src="assets/images/notification/profile-1.png" alt="">
+                  </span> 
+                  <div>
+                    <h6 class="text-md fw-semibold mb-4">Ronald Richards</h6>
+                    <p class="mb-0 text-sm text-secondary-light text-w-200-px">You can stitch between artboards</p>
+                  </div>
+                </div>
+                <span class="text-sm text-secondary-light flex-shrink-0">23 Mins ago</span>
+              </a>
+              
+              
+             </div>
+  
+              <div class="text-center py-12 px-16"> 
+                  <a href="javascript:void(0)" class="text-primary-600 fw-semibold text-md">See All Notification</a>
+              </div>
+  
+            </div>
+          </div><!-- Notification dropdown end -->
+  
+          <div class="dropdown">
+            <button class="d-flex justify-content-center align-items-center rounded-circle" type="button" data-bs-toggle="dropdown">
+              <img src="assets/images/favicon.png" alt="image" class="w-40-px h-40-px object-fit-cover rounded-circle">
+            </button>
+            <div class="dropdown-menu to-top dropdown-menu-sm">
+              <div class="py-12 px-16 radius-8 bg-primary-50 mb-16 d-flex align-items-center justify-content-between gap-2">
+                <div>
+                  <h6 class="text-lg text-primary-light fw-semibold mb-2">Akash</h6>
+                  <span class="text-secondary-light fw-medium text-sm">Admin</span>
+                </div>
+                <button type="button" class="hover-text-danger">
+                  <iconify-icon icon="radix-icons:cross-1" class="icon text-xl"></iconify-icon> 
+                </button>
+              </div>
+              <ul class="to-top-list">
+                <li>
+                  <a class="dropdown-item text-black px-0 py-8 hover-bg-transparent hover-text-primary d-flex align-items-center gap-3" href="view-profile.html"> 
+                  <iconify-icon icon="solar:user-linear" class="icon text-xl"></iconify-icon>  My Profile</a>
+                </li>
+                <li>
+                  <a class="dropdown-item text-black px-0 py-8 hover-bg-transparent hover-text-primary d-flex align-items-center gap-3" href="settings.html"> 
+                  <iconify-icon icon="icon-park-outline:setting-two" class="icon text-xl"></iconify-icon>  Setting</a>
+                </li>
+                <li>
+                  <a class="dropdown-item text-black px-0 py-8 hover-bg-transparent hover-text-danger d-flex align-items-center gap-3" href="javascript:void(0)"> 
+                  <iconify-icon icon="lucide:power" class="icon text-xl"></iconify-icon>  Log Out</a>
+                </li>
+              </ul>
+            </div>
+          </div><!-- Profile dropdown end -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dashboard-main-body">
+
+    <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mb-24">
+    <h6 class="fw-semibold mb-0">Edit Invoice</h6>
+    <ul class="d-flex align-items-center gap-2">
+      <li class="fw-medium">
+        <a href="index.html" class="d-flex align-items-center gap-1 hover-text-primary">
+          <iconify-icon icon="solar:home-smile-angle-outline" class="icon text-lg"></iconify-icon>
+          Dashboard
+        </a>
+      </li>
+      <li>-</li>
+      <li class="fw-medium">Create invoice</li>
+    </ul>
+  </div>
+    
+    <div class="card">
+      
+      <div class="card-body py-40">
+        <div class="row justify-content-center" id="invoice">
+          <div class="col-12">
+            <div class="shadow-4 border radius-8">
+              <div class="p-20 border-bottom">
+                <div class="row justify-content-between g-3">
+                  <div class="col-sm-4 text-start">
+                    <img src="assets/images/logo.png" alt="image" class="mb-8" style="width: 70%;">
+                    <p class="mb-1 text-sm">4517 Washington Ave. Manchester, Kentucky </p>
+                    <p class="mb-0 text-sm">random@gmail.com, +1 543 2198</p>
+                  </div>
+                  <div class="col-sm-4 text-sm-end text-start">
+                    <h3 class="text-xl text-end">Invoice #3492</h3>
+                    <table class="text-sm text-secondary-light ms-sm-auto">
+                        <tbody>
+                            <tr>
+                                <td class="text-sm-end text-start">Date Issues</td>
+                                <td class="text-sm-end text-start">: 
+                                    <div class="d-inline-block">
+                                        <input type="date" class="border-bottom text-sm-end text-start" placeholder="Enter name">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-sm-end text-start">Due Date</td>
+                                <td class="text-sm-end text-start">: 
+                                    <div class="d-inline-block">
+                                        <input type="date" class="border-bottom text-sm-end text-start" placeholder="Enter address">
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                </div>
+              </div>
+
+              <div class="py-28 px-20">
+                <div class="d-flex flex-wrap justify-content-between align-items-end gap-3">
+                  <div>
+                    <h6 class="text-md">Invoice From:</h6>
+                    <table class="text-sm text-secondary-light">
+                      <tbody>
+                        <tr>
+                          <td>Name</td>
+                          <td class="ps-8">: 
+                            <input type="text" class="border-bottom" placeholder="Enter name" id="user-name">
+                            <label for="user-name" class="text-success-main"><iconify-icon icon="mage:edit"></iconify-icon></label>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Address</td>
+                          <td class="ps-8">: 
+                            <input type="text" class="border-bottom" placeholder="Enter address" id="user-address">
+                            <label for="user-address" class="text-success-main"><iconify-icon icon="mage:edit"></iconify-icon></label>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Phone number</td>
+                          <td class="ps-8">: 
+                            <input type="text" class="border-bottom" placeholder="Enter phone number" id="user-phone-number">
+                            <label for="user-phone-number" class="text-success-main"><iconify-icon icon="mage:edit"></iconify-icon></label>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Other</td>
+                          <td class="ps-8">: 
+                            <input type="text" class="border-bottom" placeholder="Enter name" id="user-other">
+                            <label for="user-other" class="text-success-main"><iconify-icon icon="mage:edit"></iconify-icon></label>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div>
+                    <h6 class="text-md">Invoice To:</h6>
+                    <table class="text-sm text-secondary-light">
+                      <tbody>
+                        <tr>
+                          <td>Name</td>
+                          <td class="ps-8">: 
+                            <input type="text" class="border-bottom" placeholder="Enter name" id="cus-name">
+                            <label for="cus-name" class="text-success-main"><iconify-icon icon="mage:edit"></iconify-icon></label>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Address</td>
+                          <td class="ps-8">: 
+                            <input type="text" class="border-bottom" placeholder="Enter address" id="cus-address">
+                            <label for="cus-address" class="text-success-main"><iconify-icon icon="mage:edit"></iconify-icon></label>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Phone number</td>
+                          <td class="ps-8">: 
+                            <input type="text" class="border-bottom" placeholder="Enter phone number" id="cus-phone-number">
+                            <label for="cus-phone-number" class="text-success-main"><iconify-icon icon="mage:edit"></iconify-icon></label>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Other</td>
+                          <td class="ps-8">: 
+                            <input type="text" class="border-bottom" placeholder="Enter name" id="cus-other">
+                            <label for="cus-other" class="text-success-main"><iconify-icon icon="mage:edit"></iconify-icon></label>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+                <div class="mt-24">
+                  <div class="table-responsive scroll-sm">
+                    <table class="table bordered-table text-sm" id="invoice-table">
+                      <thead>
+                        <tr>
+                          <th scope="col" class="text-sm">SL.</th>
+                          <th scope="col" class="text-sm">Items</th>
+                          <th scope="col" class="text-sm">Price</th>
+                          <th scope="col" class="text-sm">Quantity</th>
+                          <th scope="col" class="text-sm">Amount</th>
+                          <th scope="col" class="text-center text-sm">Action</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                            <td>01</td>
+                            <td><input type="text" class="invoive-form-control" placeholder="Item"></td>
+                            <td><input type="number" class="invoive-form-control price" placeholder="₹0.00" step="0.01"></td>
+                            <td><input type="number" class="invoive-form-control qty" value="1"></td>
+                            <td><input type="number" class="invoive-form-control amount" value="0.00" step="0.01" readonly></td>
+                            <td class="text-center">
+                                <button type="button" class="remove-row" disabled>
+                                    <iconify-icon icon="ic:twotone-close" class="text-danger-200 text-xl"></iconify-icon>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>                    
+                    </table>
+                  </div>
+                  
+                  <div>
+                    <button type="button" id="addRow" class="btn btn-sm btn-success-500 radius-8 d-inline-flex align-items-center gap-1">
+                      <iconify-icon icon="simple-line-icons:plus" class="text-xl"></iconify-icon>
+                      Add New
+                    </button>
+                  </div>   
+
+                  <div class="d-flex flex-wrap justify-content-between gap-3 mt-24">
+                    <div class="w-50">
+                      <p class="text-sm mb-0"><span class="text-primary-light fw-semibold">Terms & Conditions:</span></p>
+                      <textarea type="text" class="border-bottom w-100" placeholder="Enter terms & conditions" id="user-name"></textarea>
+                    </div>
+                    <div>
+                      
+                      <table class="text-sm">
+                        <tbody>
+                          <tr>
+                            <td class="pe-64">Subtotal:</td>
+                            <td class="pe-16">
+                              <span class="text-primary-light fw-semibold" id="subtotal">₹ 0.00</span>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Tax:</td>
+                            <td class="ps-8">
+                              <input type="number" class="border-bottom" placeholder="%" id="tax">
+                            </td>
+                            <td><span id="taxAmount">₹ 0.00</span></td>
+                          </tr> 
+                          <tr>
+                            <td>Discount:</td>
+                            <td class="ps-8">
+                              <input type="number" class="border-bottom" placeholder="%" id="discount">
+                            </td>
+                            <td><span id="discountAmount">₹ 0.00</span></td>
+                          </tr> 
+                          <tr>
+                            <td class="pe-64">Grand Total:</td>
+                            <td class="pe-16">
+                              <span class="text-primary-light fw-semibold" id="grandTotal">₹ 0.00</span>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Amount Paid:</td>
+                            <td class="ps-8">
+                              <input type="number" class="border-bottom" placeholder="₹" id="amountPaid">
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="pe-64 pt-4">
+                              <span class="text-primary-light fw-semibold">Balance Due:</span>
+                            </td>
+                            <td class="pe-16 pt-4">
+                              <span class="text-primary-light fw-semibold" id="balanceDue">₹ 0.00</span>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>                      
+                      
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mt-64">
+                  <p class="text-center text-secondary-light text-sm fw-semibold">Thank you for your business!</p>
+                </div>
+
+                <div class="d-flex flex-wrap justify-content-between align-items-end mt-64">
+                  <div class="text-sm border-top d-inline-block px-12">Signature of Customer</div>
+                  <div class="text-sm border-top d-inline-block px-12">Signature of Authorized</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-header">
+        <div class="d-flex flex-wrap align-items-center justify-content-end gap-2">
+          <a href="invoice-preview.html" class="btn btn-sm btn-primary-600 radius-8 d-inline-flex align-items-center gap-1">
+            <iconify-icon icon="simple-line-icons:check" class="text-xl"></iconify-icon>
+            Preview
+          </a>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+    <footer class="d-footer">
+  <div class="row align-items-center justify-content-between">
+    <div class="col-12 text-center">
+      <p class="mb-0">© 2025 TideBill. All Rights Reserved.</p>
+    </div>
+  </div>
+</footer>
+</main>
+  
+  <!-- jQuery library js -->
+  <script src="assets/js/lib/jquery-3.7.1.min.js"></script>
+  <!-- Bootstrap js -->
+  <script src="assets/js/lib/bootstrap.bundle.min.js"></script>
+  <!-- Apex Chart js -->
+  <script src="assets/js/lib/apexcharts.min.js"></script>
+  <!-- Data Table js -->
+  <script src="assets/js/lib/dataTables.min.js"></script>
+  <!-- Iconify Font js -->
+  <script src="assets/js/lib/iconify-icon.min.js"></script>
+  <!-- jQuery UI js -->
+  <script src="assets/js/lib/jquery-ui.min.js"></script>
+  <!-- Vector Map js -->
+  <script src="assets/js/lib/jquery-jvectormap-2.0.5.min.js"></script>
+  <script src="assets/js/lib/jquery-jvectormap-world-mill-en.js"></script>
+  <!-- Popup js -->
+  <script src="assets/js/lib/magnifc-popup.min.js"></script>
+  <!-- Slick Slider js -->
+  <script src="assets/js/lib/slick.min.js"></script>
+  <!-- prism js -->
+  <script src="assets/js/lib/prism.js"></script>
+  <!-- file upload js -->
+  <script src="assets/js/lib/file-upload.js"></script>
+  <!-- audioplayer -->
+  <script src="assets/js/lib/audioplayer.js"></script>
+  
+  <!-- main js -->
+  <script src="assets/js/app.js"></script>
+<script src="assets/js/invoice.js"></script>
+</body>
+</html>
