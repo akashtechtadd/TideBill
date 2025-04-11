@@ -13972,7 +13972,8 @@ td.fc-header-center {
 }
 
 .auth-left {
-  background: linear-gradient(90deg, #ECF0FF 0%, #FAFBFF 100%);
+  background: #b5f0ff;
+background: linear-gradient(90deg, rgba(181, 240, 255, 1) 0%, rgba(255, 255, 255, 1) 100%);
   width: 50%;
 }
 
@@ -13992,7 +13993,8 @@ td.fc-header-center {
   }
 }
 .auth.forgot-password-page .auth-left {
-  background: var(--gradients-Colors-gradients-2, linear-gradient(90deg, #F7E9FF 0.12%, #FDF8F7 99.89%));
+  background: #eac7ff;
+background: linear-gradient(90deg, rgba(234, 199, 255, 1) 0%, rgba(255, 255, 255, 1) 100%);
 }
 
 .center-border-horizontal {
@@ -15544,4 +15546,10 @@ td.fc-header-center {
 
 .cus-hover:hover{
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px !important;
+}
+
+@media(max-width: 768px){
+  .hide-mobile{
+    display: none;
+  }
 }

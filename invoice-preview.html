@@ -121,10 +121,29 @@
           <button type="button" class="sidebar-mobile-toggle">
             <iconify-icon icon="heroicons:bars-3-solid" class="icon"></iconify-icon>
           </button>
-          <form class="navbar-search">
-            <input type="text" name="search" placeholder="Search">
-            <iconify-icon icon="ion:search-outline" class="icon"></iconify-icon>
-          </form>
+          <p class="mb-0">
+            <span id="greeting"></span> 
+            <b class="text-black">Akash</b>
+          </p>
+          <script>
+            const greetingEl = document.getElementById("greeting");
+            const now = new Date();
+            const hour = now.getHours();
+          
+            let greeting = "Hello";
+          
+            if (hour >= 5 && hour < 12) {
+              greeting = "Good Morning";
+            } else if (hour >= 12 && hour < 17) {
+              greeting = "Good Afternoon";
+            } else if (hour >= 17 && hour < 21) {
+              greeting = "Good Evening";
+            } else {
+              greeting = "Good Night";
+            }
+          
+            greetingEl.textContent = greeting;
+          </script>
         </div>
       </div>
       <div class="col-auto">
@@ -206,7 +225,7 @@
                   <iconify-icon icon="icon-park-outline:setting-two" class="icon text-xl"></iconify-icon>  Setting</a>
                 </li>
                 <li>
-                  <a class="dropdown-item text-black px-0 py-8 hover-bg-transparent hover-text-danger d-flex align-items-center gap-3" href="javascript:void(0)"> 
+                  <a class="dropdown-item text-black px-0 py-8 hover-bg-transparent hover-text-danger d-flex align-items-center gap-3" href="sign-in.html"> 
                   <iconify-icon icon="lucide:power" class="icon text-xl"></iconify-icon>  Log Out</a>
                 </li>
               </ul>
